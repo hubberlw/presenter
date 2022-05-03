@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="roleViewModel"
+            type="com.example.presenter.role.RoleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".role.RoleFragment">
+
+        <Button
+            android:id="@+id/bu_all_roles"
+            style="@style/standardButtons"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/show_all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bu_checked_roles"
+            style="@style/standardButtons"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/show_checked"
+            app:layout_constraintStart_toEndOf="@+id/bu_all_roles"
+            app:layout_constraintTop_toTopOf="@+id/bu_all_roles" />
+
+        <Button
+            android:id="@+id/bu_unchecked_roles"
+            style="@style/standardButtons"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/show_unchecked"
+            app:layout_constraintStart_toEndOf="@+id/bu_checked_roles"
+            app:layout_constraintTop_toTopOf="@+id/bu_all_roles"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/bu_show_hide_persons"
+            style="@style/standardButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="@string/show_hide_persons"
+            app:layout_constraintStart_toEndOf="@+id/bu_unchecked_roles"
+            app:layout_constraintTop_toTopOf="@+id/bu_all_roles" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="TextView"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/bu_all_roles" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_role_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bu_all_roles"
+            app:listData="@{roleViewModel.roles}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

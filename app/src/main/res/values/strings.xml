@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Presenter</string>
+    <string name="role_name">Role Name</string>
+    <string name="role_category">Role Category</string>
+    <string name="show_hide_persons">Hide Persons</string>
+    <string name="show_all">All</string>
+    <string name="show_checked">I</string>
+    <string name="show_unchecked"> </string>
+    <string name="category_list">Category List</string>
+    <string name="person_list">Person List</string>
+    <string name="role_category_order">Category Order</string>
+    <string name="role_fragment">RoleFragment</string>
+</resources>
